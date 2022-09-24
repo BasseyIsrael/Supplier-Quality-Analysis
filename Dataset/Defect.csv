@@ -1,0 +1,306 @@
+Defect,Defect ID
+Dimensions - Bad Finishing,1
+Bad Seams,2
+Bad Seams,3
+Bad Seams,4
+Gap Variation,5
+False scores,6
+Weak Walls,7
+Overlapping Seam,8
+Material Handling/ Shipping Requirements Error,9
+Corrugate Falling Apart,10
+Warping,11
+Delamination,12
+Wrong  Size,13
+Wrong Size,14
+Scrap attached,15
+Wrinkles / Scratches/ Scuffing,16
+Skewed,17
+Misaligned Slots,18
+Liner Misalignment,19
+Scrap attached,20
+Folding - Wrong Crease,21
+Incorrect Vertical Size,22
+Print defects,23
+Too Stiff,24
+Misc,25
+Loose Core,26
+Tubs Stuck,27
+Bad Print,28
+Warped,29
+Foreign objects found,30
+Off-set,31
+Opened containers,32
+No Bar Code,33
+Damaged Secondary Packaging,34
+No Insert,35
+Excessive Grease,36
+Incorrect Dimensions,37
+Damaged in Transit,38
+Infestation,39
+Lay Flat Dimension,40
+Out of Spec,41
+Damaged Rolls,42
+Wrong Core,43
+Roll Tension,44
+Split Seams,45
+Film Not Sealing,46
+Sporadic Adhesive,47
+Wrong Core,48
+Slitting Erorrs,49
+Tension Issues,50
+No Adhesive,51
+Holes in Material,52
+Creases / Wrinkles,53
+Splice,54
+Wrong Finish,55
+Coating,56
+Wrong Label,57
+Incorrect Material,58
+Roll Pattern,59
+Wrong Registration,60
+Container Out of Spec,61
+No Liner,62
+Cartons Not Opening,63
+Out of Spec,64
+Bad Carton Packaging,65
+Bowed/Warped,66
+Unsealed Cartons,67
+Inside Scoring,68
+Foreign Material,69
+Wrong material,70
+Dirty Containers,71
+Over/Under Fill,72
+Air,73
+Film Not Intact,74
+Wrong Horizontal Scores,75
+No Print,76
+Wrong Ink,77
+Inclomplete,78
+Water Damage,79
+Wrong Colors,80
+Components Stuck,81
+Wrong Tails,82
+Scratches,83
+Bad Seal,84
+Leaks,85
+Print Problems,86
+Bad Tiles,87
+Wrong Case Labels,88
+Mixed Product,89
+Printing Defects,90
+Cracked,91
+Bad Cut,92
+Sealed Together Internally,93
+Sealed Together Externally,94
+Bad Bearings,95
+Broken Glass,96
+Material Contamination,97
+Too Thin,98
+Bad Seams,99
+Stones and Sand,100
+Split Seams,101
+Bad Finish,102
+Blisters,103
+Scratched Glass,104
+Wrong Labeling,105
+Bad Distribution,106
+Warped  Sheets,107
+Crushed Sidewalls,108
+Wrong Shade of Color,109
+Packaging Issues,110
+Dents,111
+Holes,112
+Misformed Parts,113
+Wrong Parts,114
+Soft Parts,115
+Wrong Drive,116
+Skewed Cartons,117
+Short Valves,118
+Incomplete Molding,119
+Ejector Pin Wrong,120
+Open Caps,121
+Bad Fit,122
+Mixed Parts,123
+Split hinges,124
+Color Deviation,125
+Packaging Integrity,126
+Bad Tops,127
+Narrow Tops,128
+Wrong Codes,129
+Carton Delamination,130
+Wrong Flaps,131
+Shallow Slots,132
+Wrong Consistency,133
+Matts,134
+Leaking Seals,135
+Bad Film,136
+Packaging Issues,137
+Soft Tops,138
+Parting Tops,139
+Wrong Coloring,140
+Incorrect Labeling,141
+Wrong Specifications,142
+Wrong Print,143
+Missing Labels,144
+Too Heavy,145
+Integrity Failure,146
+Printing Defect,147
+Deep Slots,148
+Contamination,149
+Too Much Chemicals,150
+Contamination,151
+Out of Support,152
+Wrong Cut,153
+Print Impression,154
+Loose Fit,155
+No Tight Seal,156
+Tops Bent,157
+Expired,158
+Wrong Spec Date,159
+No Torque,160
+Torn Packaging,161
+Flaps - Incorrect Gap,162
+Missing Components,163
+Too Stiff,164
+Bubbling,165
+Other,166
+Weak Bands,167
+Dents,168
+No Sealing,169
+Broken Valve Seal,170
+Color Variation,171
+Missing Codes,172
+Irregular Shape,173
+Wrong Surface,174
+Scratches,175
+Component Failure,176
+Dirty Material,177
+Missing Labels,178
+Wrong Cut,179
+Damaged Parts,180
+Raw Material,181
+Wrong Registration,182
+No Docs,183
+Does Not Run,184
+String Defects,185
+Poor  Adhesion,186
+Double Labeling,187
+Leaking Packaging,188
+Tape Wrong,189
+Bad Fill,190
+Weak Wrap,191
+Odor,192
+No Slip Sheets,193
+Wrong Item,194
+No Shipment Info,195
+No Screws,196
+Bad Flaps,197
+No Disk,198
+Wrong Shape,199
+Print Off Center,200
+Contamination,201
+Material Separation,202
+Bad Fasteners,203
+Burnt,204
+Missing Packaging,205
+Bad Seams,206
+Foreign Objects,207
+Rough Tops,208
+Cut Box,209
+Other,210
+No Fill,211
+Missing Components,212
+Crack,213
+Gages Broken,214
+Wrong Bands,215
+Cut Wires,216
+Not Cleaned,217
+Out of Specification,218
+Incorrect Color,219
+Scuffed Packaging,220
+Thin Packaging,221
+Smeared Print,222
+Spring damanged,223
+Not Balanced,224
+No Varnish,225
+Wrong Filtering,226
+Not Certified,227
+Spruced,228
+Bad Welding,229
+Missing Liner,230
+Bad Insert,231
+Damaged,232
+Bad Labels,233
+Wrong Hue,234
+Moisture,235
+Top Too Small,236
+Excessive Lubricant,237
+Spacing Between Labels,238
+Bulging Packaging,239
+Leaking Packaging,240
+Bad Shots,241
+Bad Valves,242
+Wrong Check,243
+Scratches,244
+Streaks,245
+Water Damage,246
+Not Certified,247
+Wrong Qty,248
+No Liner,249
+Ink Smears,250
+Defective Packaging,251
+No Label,252
+Wrong Spec,253
+Seams,254
+Splinter,255
+Assembly Issues,256
+Wrong Bond,257
+Dimensions Wrong,258
+Liner Issues,259
+Damaged Parts,260
+Packaging Wrong,261
+Poor Cut,262
+No Lock,263
+Scratch,264
+Damaged in Transit,265
+Codes Wrong,266
+Dirty,267
+Poor Seam,268
+Excessive Glue,269
+Poor Pairing,270
+Bad Welding,271
+Errors in Packaging,272
+Wrong Fasteners,273
+Defective Rims,274
+Packaging Damaged,275
+Mishandled,276
+Soft Sides,277
+Failed Tension Test,278
+Dents,279
+Cuts,280
+Warped,281
+Bowed,282
+Bad Bond,283
+Holes,284
+Wrong Makeup,285
+Wrong Tops,286
+Moisture Damage,287
+Heat Damage,288
+No Close,289
+Bad Parameters,290
+Gaps,291
+Crooked,292
+Insufficient Parts,293
+Damaged Components,294
+Deformed Parts,295
+Incomplete Tops,296
+Sides Bad,297
+No Adhesive,298
+Short Walls,299
+Tops Short,300
+Poor Fit,301
+No Crank,302
+Not Cleaned,303
+Odor,304
+Tampered,305
