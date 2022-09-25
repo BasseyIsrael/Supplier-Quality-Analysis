@@ -1,0 +1,31 @@
+-- Obtain Number of Total Defects
+
+SUM([Defect Qty])
+
+-- Obtain total number of defect reports
+
+COUNTROWS(Metrics)
+
+-- Obtain number of defects from previous year
+
+CALCULATE([Total Defect Qty], SAMEPERIODLASTYEAR('Date'[Date]))
+
+--Obtain a maximum threshold for total defects
+
+[Total Defect Qty]*1.25
+
+-- Obtain total downtime minutes
+
+SUM([Downtime min])
+
+-- Obtain total downtime minutes from previous year
+
+CALCULATE([Total Downtime Minutes], SAMEPERIODLASTYEAR('Date'[Date]))
+
+--Obtain a maximum threshold for downtime minutes
+
+[Total Downtime Minutes]*1.15
+
+--Format month from date as 3 letters
+
+FORMAT([Date], "MMM")
