@@ -224,7 +224,7 @@ As observed in the analysis, more defects do not necessarily translate to more d
 
 - Absence of the total orders or supplies data. This is needed to ensure that the performance analysis performed is mostly relative performance rather than an absolute performance analysis.
 
-# **Explore Dashboard**
+# **Explore Dashboard** [View](https://github.com/BasseyIsrael/Supplier-Quality-Analysis/tree/main/Dashboard)
 
 <img src="Image Assets\Dashboard Screenshot.PNG" alt="analysis" />
 
