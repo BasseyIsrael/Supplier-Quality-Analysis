@@ -1,9 +1,6 @@
-# Supplier Quality Analysis
- This repository presents the analysis of the items provided by different suppliers to a company offering needing various products. The defects associated with items supplied is analyzed extensively.
 
 
-
-<img src="Stock Banner.png" alt="Stock Prediction Banner" />
+<img src="Stock Banner.png" alt="Supplier Quality Banner" />
 
 
 <div align="center">
@@ -15,10 +12,10 @@
 
 <div align="justify">
 
- This project focuses on one of the most common supply chain challenges: Supplier Quality Analysis. This repository provides the analysis files, Power BI Dashboard, and Datasets.  Use this readme file to understand the project and the results obtained. If you would like to collaborate on a time series related project, you can contact me on israelbssy@gmail.com.
+ This project focuses on one of the most common supply chain challenges: Supplier Quality Analysis. This repository provides the analysis files, Power BI Dashboard, and Datasets.  Use this readme file to understand the project and the results obtained. If you would like to collaborate on data-related project, you can contact me on israelbssy@gmail.com.
 
 
-Please, feel free to contribute to the codes any way you can. Comment any script you would like for me to provide. Cheers!
+Please, feel free to contribute to the project any way you can. Cheers!
 
 
 
@@ -28,11 +25,9 @@ Please, feel free to contribute to the codes any way you can. Comment any script
 
 <div align="center">
 
-![Python version](https://img.shields.io/badge/Python%20version-3.10%2B-lightgrey?style=for-the-badge)
+![Python version](https://img.shields.io/badge/microsoft%20power%20BI-darkgrey?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/BasseyIsrael/Stock-Assets-Prediction?style=for-the-badge)
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/BasseyIsrael/Stock-Assets-Prediction/src?label=NOTEBOOKS&style=for-the-badge)
-![Type of ML](https://img.shields.io/badge/ML%20TYPE-TIME%20SERIES%20REGRESSION-red?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/BasseyIsrael/Stock-Assets-Prediction?style=for-the-badge)
+![Type of ML](https://img.shields.io/badge/%20-insights%20and%20analysis-red?style=for-the-badge)
 ![License](https://img.shields.io/github/license/BasseyIsrael/Stock-Assets-Prediction?style=for-the-badge)
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
@@ -44,11 +39,11 @@ For the Badges [source](https://shields.io/)
 
 
 
-# **The total number of defects obtained do not automatically translate to downtime experienced. The key is to know where downtime is experienced (plant and supplier), and direct focus.**
+# **The total number of defects obtained do not automatically translate to downtime experienced. The key is to know where downtime is experienced (plant and supplier), and direct the focus.**
 
 </div>
 
-## **Author(s)**
+## **Author**
 
 - [Israel Bassey](https://github.com/BasseyIsrael)
 
@@ -56,13 +51,11 @@ For the Badges [source](https://shields.io/)
 
   - [Introduction & Business Problem](#introduction--business-problem)
   - [Source of Data](#source-of-data)
-  - [Analysis Employed](#methods-applied)
-  - [Key Results & Insights Obtained](#quick-glance-at-key-results)
-  - [Lessons Learned and Recommendation](#lessons-learned-and-recommendation)
+  - [Analysis Employed](#analysis-employed)
+  - [Key Results & Insights Obtained](#key-results--insights-obtained)
   - [Limitation and Improvement Opportunities](#limitations-and-improvement-opportunities)
-  - [Explore Dashboard](#explore-notebook)
-  - [Contribution](#contribution)
-  - [License](#license  )
+  - [Explore Dashboard](#explore-dashboard)
+  - [License](#license)
 
 <div align="Justify">
 
@@ -76,14 +69,14 @@ For this project, two metrics are taken as the key focus. The metrics mainly con
 The key objectives are to understand the best and worst suppliers with respect to quality, the business effects, and how well we are handling the defects obtained. The objectives here determined the Business Questions to be answered. 
 
 ## Business Questions
-- Who are our best suppliers with respect to quality? 
-- Who are our most favourable suppliers (business effect)?
-- Who are our worst suppliers with respect to quality?
-- Who are our least favourite suppliers?
-- What is our best managed material type? Any reason?
-- How much effect do our worst suppliers have on our business? How should this br handled?
-- How well are we managing the defects experienced in comparison?
-- Do more defects translate to more donwtime?
+- [Who are our best suppliers with respect to quality?](#who-are-our-best-suppliers-with-respect-to-quality)
+- [Who are our most favourable suppliers (business effect)?](#who-are-our-most-favourable-suppliers-business-effect)
+- [Who are our worst suppliers with respect to quality?](#who-are-our-worst-suppliers-with-respect-to-quality)
+- [Who are our least favourable suppliers?](#who-are-our-least-favourable-suppliers)
+- [How much effect do our worst suppliers have on our business? How should this br handled?](#how-much-effect-do-our-worst-suppliers-have-on-our-business-how-should-this-be-handled)
+- [What is our worst managed material type? Any reason?](#what-is-our-worst-managed-material-type-any-reason)
+- [How well are we managing the defects experienced in comparison?](#how-well-are-we-managing-the-defects-experienced-in-comparison)
+- [Do more defects translate to more donwtime?](#do-more-defects-translate-to-more-donwtime)
 
 
 # **Source of Data**
@@ -126,182 +119,115 @@ The first metric to be evaluated was to obtain the total number of defects that 
 Total Defect Qty = SUM([Defect Qty])
 ```
 
-The next metric to be obtained was to obtain the total number of reports of defects over the period of analysis. This is obtained from the logs provided on the facts table. 
+The next metric to be obtained was to obtain the total number of reports of defects over the period of analysis. This is obtained from the logs provided on the facts table. A simple measure does this easily.
 
-## Feature Extraction [(View)](https://github.com/BasseyIsrael/Stock-Assets-Prediction/blob/main/src/A-%20Feature%20Extraction%20with%20Technical%20indicators.ipynb)
+```bash
+Total Defects Reports = COUNTROWS(Metrics)
+```
+As a way to observe how much growth has been experienced, an annual annual analysis is performed here on the total quantity of defects for the previous year to be used in comparison with the total quantity of defects for the running year. A simple measure to obtain this is:
 
-Prediction requires features and for this reason, extensive feature extraction was performed in this project using specific features including lagged prices from the in-situ data properties and use of technical indicators. The indicators give us information on the stock like when it's overbought, oversold, price trend strength, etc.
+```bash
+Previous Year = CALCULATE([Total Defect Qty], SAMEPERIODLASTYEAR('Date'[Date]))
+```
 
-The technical Indicators used for this purpose are: 
+The same things done for the total defects are done foe the downtime minutes. the downtime minutes are needed to check the actual effects of the defects on the company. The following are obtained with respect to downtime minutes:
 
-- [Bollinger Bands](https://www.investopedia.com/terms/b/bollingerbands.asp)
-- [Simple Moving Average (SMA)](https://www.investopedia.com/terms/s/sma.asp)
-- [Exponential Moving Average](https://www.investopedia.com/terms/e/ema.asp)
-- [Average True Range (ATR)](https://www.investopedia.com/terms/a/atr.asp)
-- [Average Directional Index (ADX)](https://www.investopedia.com/terms/a/adx.asp)
-- [Commodity Channel Index (CCI)](https://www.investopedia.com/terms/c/commoditychannelindex.asp)
-- [Rate-of-change (ROC)](https://www.investopedia.com/terms/r/rateofchange.asp)
-- [Relative Strength Index (RSI)](https://www.investopedia.com/terms/r/rsi.asp)
-- [Williams %R](https://www.investopedia.com/terms/w/williamsr.asp)
-- [Stochastic Oscillator %K](https://www.investopedia.com/terms/s/stochasticoscillator.asp)
+- Total Downtime Minutes
+- Total Downtime Minutes from Previous Year
+- Maximum threshold for downtime minutes
 
-To improve reusability of the code to perform your personal feature extraction and refactoring, a pipeline was developed which mimcked the workflow used in the initial feature extraction process. The pipeline can be accessed [here](https://github.com/BasseyIsrael/Stock-Assets-Prediction/blob/main/src/B-%20Stock%20Prediction%20Feature%20Extraction%20Pipeline.ipynb)
+With these obtained as measures, visualization was performed to provide reports on how operations have been going.
 
-
-## Predictive Analysis [(View)](https://github.com/BasseyIsrael/Stock-Assets-Prediction/blob/main/src/C%20-%20Stock%20Prediction%20with%20XGBoost%2C%20LSTM%2C%20RForest%2C%20Linear%20Regression.ipynb)
-
-To obtain the new closing prices of the stocks, predictive algorithms were used. With extraction performed, lagging effects and technical indicator information are used as input variables for predicting the required closing prices.
-The algorithms used are:
-- [Linear Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
-- [XGBoost](https://xgboost.readthedocs.io/en/stable/) 
-- [Random Forests Regression](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
-- [Long-Short Term Memory (LSTM)](https://www.tensorflow.org/api_docs/python/tf/keras/layers/LSTM)
+The features allow the user to view and monitor important performance indicators in real-time, allowing the recognition of metrics to drive better opportunities and success. 
 
 
-# **Quick Glance at Key Results**
+# **Key Results & Insights Obtained**
 
-A look into the features extracted can be obtained in [this spreadsheet](https://github.com/BasseyIsrael/Stock-Assets-Prediction/blob/main/Saved%20Features/NETFLIX.csv)
+The results presented here arise from the business questions posed at the beginning of the analysis.
 
-The features extracted were also accesses to obtain the feature importance. A plot of the feature importance is presented. The Relative Strength Index (RSI) was seen to have the highest effect on the features
+## **Who are our best suppliers with respect to quality?**
 
-Feature importance of Technical Indicators
+To obtain this, the analysis needs to be tailored to the total quantity of defects metric. This gives an overview of the suppliers that have supplied the least number of defective products. In this analysis, it was observed that many suppliers have zero defects and this may also mean that they have nor supplied anything during the period of the analysis. hence, a risk of obtaining false performance is run. It is advisable that the data for quantity of supplies is also provided so a percentage anaysis can be run for this purpose rather than a count analysis. The best suppliers in terms of quantity can be obtained from the table.
 
-<img src="Assets\feature importance of technical indicators.png" alt="Feature Importance" />
+**A lot of our vendors have no defective supply. They can be seen as our best suppliers with respect to quality.**
 
+<img src="Image Assets\question 1.png" alt="analysis" />
 
-The prediction algorithms listed above were used on 6 stocks and the performance of the developed predictors was used to determine a suggested model to employ given the features extraxted. An object oriented pipeline for prediction to make it easier to reuse the algorithm. 
+## **Who are our most favourable suppliers (business effect)?**
 
-The prediction plots obtained from the algorithms used are also presentes. To obtain more information about the workflow, you can access [the notebook](https://github.com/BasseyIsrael/Stock-Assets-Prediction/blob/main/src/C%20-%20Stock%20Prediction%20with%20XGBoost%2C%20LSTM%2C%20RForest%2C%20Linear%20Regression.ipynb).
+Direct business effect is measured by the total downtime experienced by the business as a result of defects experienced by the products. To know the most favourable suppliers with respect to business effect, a view of the total downtime experienced by supplier is obtained. However, the same problem of false performance is experienced here. The Table is presented here.
 
-Actuals vs Prediction for Linear Regression (Goldman Sachs Group Inc Stock)
+**The vendors with the least contributed downtime can be seen as our most favourable.**
 
-<img src="Assets\linear regression actual vs predicted.png" alt="Actuals vs Prediction" />
+<img src="Image Assets\question 2.png" alt="analysis" />
 
-Actuals vs Prediction XGBoost (Nike Inc Stock)
+## **Who are our worst suppliers with respect to quality?**
 
-<img src="Assets\XGBoost actual vs predicted.png" alt="Actuals vs Prediction" />
+Just as the best suppliers with respect to quality were obtained, the worst suppliers with respect to quality are also obtained. The suppliers with the highest defects (not minding the aftermath of the defect) are seen as the worst suppliers here. There is little chance of false performance for this analysis. A sorted table gives this information. 
 
-Actuals vs Prediction for Random Forests Regression (Nike Inc Stock)
+**The vendors with the highest number of defects are the worst with respect to quality.**
 
-<img src="Assets\Random forests actual vs predicted.png" alt="Actuals vs Prediction" />
-
-Actuals vs Prediction for LSTM (Goldman Sachs Group Inc Stock)
-
-<img src="Assets\lstm prediction.png" alt="Actuals vs Prediction for LSTM" />
+<img src="Image Assets\question 3.png" alt="analysis" />
 
 
-The LSTM model structure
+## **Who are our least favourable suppliers?**
+
+For this analysis, the suppliers effects on business needs to be considered not minding how many defective items they have supplied over the analysis period. Our top 10 worst suppliers are presented here and it can be seen that we have lost as high as 26000 minutes due to defects from only one supplier, contributing to the overall 139000 minutes. A deeper look at this will be to understand how much effects our worst suppiers have on the business. 
+
+<img src="Image Assets\question 4.png" alt="analysis" />
 
 
-| Layer (type)              | Output Shape            | Param #   |
-|---------------            |--------------------     |---------- |
-| lstm_3 (LSTM)             | (None, 70, 32)          | 4352      |
-|lstm_4 (LSTM)              | (None, 32)              | 8320      |
-| dense_2 (Dense)           | (None, 1)               |33         |  
+## **How much effect do our worst suppliers have on our business? How should this be handled?**
+
+With the need to gain more insights on the effects our worst suppliers have, a visualization was used to provide clarity. A treemap showing the contribution of each supplier is presented. From the treemap, it is observed that the top 10 least favourable suppliers contribute to up to 50% of downtime in our business. To handle this, a look into the shared raw metarials suppliers can be considered where the suppliers with least downtime effects can be used as substitutes for the supply of the same raw materials. An optimization process can be used here (coming soon).
+
+**Top 10 least favourable suppliers contribute to more than 50% of the downtime faced by the business**
+
+<img src="Image Assets\question 6.png" alt="analysis" />
+
+## **What is our worst managed material type? Any reason?**
+
+To understand the worst managed material type, one would need to observe the relationship between the defects. The vizualization below shows that there are three things that need to be considered when a defect is observed:
+
+- If it was rejected
+- If it has an impact
+- If it has no impact.
+
+<img src="Image Assets\reference.png" alt="analysis" />
+
+As seen, a material type may have many defects but the defects may also have equally significant high number of defects with no impact. The items that have impact lead to the downtime and these can be seen as the worst managed item. A combo of a line and column chart is used to perform this analysis. From the vizualization, it is seen that even though corrugatre has significantly low number of defects, it still contributes to the highest downtime. This is the least managed material type.
+
+<img src="Image Assets\question 5.png" alt="analysis" />
 
 
-Giving more insights on the performance, a table showing the average performance for different metrics across the 6 stocks is also presented. 
+## **How well are we managing the defects experienced in comparison?**
 
-<img src="Performance Results.PNG" alt="Performance" />
+It is expected that we get better in comparison to the pevious year of operation. Analysing this requires that we look at the difference in time units for the number of defects faced. The plot shows that there are many more material defects faced in 2014 especially in October which contributed to 9.48% of the defects for the year. The visualization is shown.
 
+**We experieced more defects in the business especially in October 2014**
 
+<img src="Image Assets\question 7.png" alt="analysis" />
 
+To seen if this is as bad as it seems, a plot is made to see how much the downtime experienced each year contributes to the total donwtime experienced by the company. The plot shows that 2014 still carried more downtime than 2013, calling for some form of worry. This can however be explored more of the data for total number of items supplied is also provided. This will show the relative performance rather than an absolute performance.
 
-
-- ***Based on these features, the final model to be considered first is the XGBoost***
-- ***It is observed that it performes better than all the other models across all metrics, without considering the linear regression model***
-- ***The linear regression model shows an overfit with the data, hence should not be considered in this case.***
-- ***LSTM model did not perform well considering these features and should be checked. For this, the features extracted do not work well with a time-series algorithm like LSTM. To handle this, an extra feature extraction was performed to obtain logged data of closing prices for the previous 30 days.***
-
-The work on improving the LSTM model gave better results than the results obtained from the initial features used. 
-
-A new LSTM model network was obtained.
-
-| Layer (type)              | Output Shape            | Param #   |
-|---------------            |--------------------     |---------- |
-| lstm_1 (LSTM)             | (None, 60, 50)          | 10400     |
-|lstm_2 (LSTM)              | (None, 50)              | 20200     |
-| dense_1 (Dense)           | (None, 1)               | 51        |  
-|Total params: 30,651             |
-|Trainable params: 30,651         |
-|Non-trainable params: 0          |
-
-The new prediction made is also presented
-
-Actuals vs Prediction for LSTM (IBM Stock)
-
-<img src="Assets\new lstm prediction.png" alt="Actuals vs Prediction for LSTM" />
-
-Performance Metrics
-
-| R2       | MAPE     | RMSE   | MAE   |
-|--------  |-----     |------  |------ |
-|0.87  |3.24     |0.84  |0.67 |
+**It can be deduced that the Defect-Downtime ratio has reduced in 2014**
+<img src="Image Assets\downtime.png" alt="analysis" />
 
 
+## **Do more defects translate to more donwtime?** 
 
-The regression algorithms are able to adopt the trend and move close to the Actual closing price in the right direction with a very low Mean Absolute error(MAE). The Evaluation Metrics is above to see how each algorithm performed on each stock. They conformed to the Feature Extraction done to extract around 60 features including lagged Index funds prices, Technical Indicators like Exponential Moving Average, RSI, ADR, Willam's R, bollinger bands and many more.
+As observed in the analysis, more defects do not necessarily translate to more downtime. It is however advisable to keep the number of defects at a low because there is no direct or indirect relationship establised.
 
-LSTMs did not perform well on this as expected, as the data is not using a long sequence of time steps. LSTM worked better on time series following  30-60 days of lookback data for every prediction. The improvement is observed through the drastic reduction of the MAE to **0.67** with a coefficient of determination on **0.87**. 
-
-# **Lessons Learned and Recommendation**
-
-- From the analysis, it was observed that a set of values stand-out as important features in the prediction of the closing price. The value with the highest impact on prediction being the Relative Strength Index (RSI). This is seemingly expected considering the volitality of the prices being considered. This is not to say that th eother features play no part in the prediction process, however in a case on further work an dre-application requiring dimensionality reduction, the items to be overlooked are equally presented. 
-- The behaviour of conventional regression algorithms would differ from the behaviour of algorithms specially suited for an application type like time-series forecasting. It is thus necessary to set up relevant features to be considered for prediction when using a set of algorithms.
-
-- Recommendation would be to ensure that the data applied to a pipeline conforms to the necessary, and corresponding Index fund during feature extraction and prediction to keep the relevance of the features and prevent under-performance.
 
 # **Limitations and Improvement Opportunities**
 
-- Development of an interface that gives the user(s) ease of access to prediction.
-- Using the interface to help users train their own algorithms and work with fresh data.
+- Absence of the total orders or supplies data. This is needed to ensure that the performance analysis performed is mostly relative performance rather than an absolute performance analysis.
 
-# **Explore Notebook**
+# **Explore Dashboard**
 
-- [A- Feature Extraction with Technical indicators.ipynb](https://nbviewer.org/github/BasseyIsrael/Stock-Assets-Prediction/blob/main/src/A-%20Feature%20Extraction%20with%20Technical%20indicators.ipynb)
-- [B- Stock Prediction Feature Extraction Pipeline.ipynb](https://nbviewer.org/github/BasseyIsrael/Stock-Assets-Prediction/blob/main/src/B-%20Stock%20Prediction%20Feature%20Extraction%20Pipeline.ipynb)
-- [C - Stock Prediction with XGBoost, LSTM, RForest, Linear Regression](https://nbviewer.org/github/BasseyIsrael/Stock-Assets-Prediction/blob/main/src/C%20-%20Stock%20Prediction%20with%20XGBoost%2C%20LSTM%2C%20RForest%2C%20Linear%20Regression.ipynb)
-- [D - Stock Prediction with LSTM (IBM).ipynb](https://nbviewer.org/github/BasseyIsrael/Stock-Assets-Prediction/blob/main/src/D%20-%20Stock%20Prediction%20with%20LSTM%20%28IBM%29.ipynb)
+<img src="Image Assets\Dashboard Screenshot.png" alt="analysis" />
 
 
-# **Run Locally**
-
-Initialize git
-
-```bash
-git init
-```
-
-
-Clone the project
-
-```bash
-git clone https://github.com/BasseyIsrael/Stock-Assets-Prediction.git
-```
-
-enter the project directory
-
-```bash
-cd Stock-Assets-Prediction
-```
-
-Install the dependencies nad libraries to run the package using the requirements file. (recommended)
-
-```bash
-pip install requirements.txt
-```
-
-List all the packages installed
-
-```bash
-pip list
-```
-
-
-
-## Contribution
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change or contribute.
 
 # **License**
 
