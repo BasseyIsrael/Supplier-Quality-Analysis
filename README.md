@@ -211,6 +211,7 @@ It is expected that we get better in comparison to the pevious year of operation
 To seen if this is as bad as it seems, a plot is made to see how much the downtime experienced each year contributes to the total donwtime experienced by the company. The plot shows that 2014 still carried more downtime than 2013, calling for some form of worry. This can however be explored more of the data for total number of items supplied is also provided. This will show the relative performance rather than an absolute performance.
 
 **It can be deduced that the Defect-Downtime ratio has reduced in 2014**
+
 <img src="Image Assets\downtime.png" alt="analysis" />
 
 
@@ -254,24 +255,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 Learn more about [MIT](https://choosealicense.com/licenses/mit/) license
-
-
-
-
-﻿At 26,185, Reddoit had the highest Total Downtime Minutes and was 674.25% higher than Planethouse, which had the lowest Total Downtime Minutes at 3,382.﻿﻿
-﻿﻿
-﻿﻿[]﻿﻿
-﻿﻿
-﻿﻿Reddoit accounted for 31.67% of Total Downtime Minutes.﻿﻿
-﻿﻿
-﻿﻿Across all 10 Vendor, Total Downtime Minutes ranged from 3,382 to 26,185.﻿﻿
-﻿﻿
-﻿﻿Total Total Defect Qty was higher for 2014 (32,983,053) than 2013 (23027902).﻿﻿
-﻿﻿
-﻿﻿Oct in Year  made up 9.48% of Total Defect Qty.﻿﻿
-﻿﻿
-﻿﻿Average Total Defect Qty was higher for 2014 (2,748,587.75) than 2013 (1,918,991.83).﻿﻿
-﻿﻿
-﻿﻿Total Defect Qty for 2014 and 2013 diverged the most when the Month was Oct, when 2014 were 3,779,055 higher than 2013.﻿﻿
-﻿﻿
-﻿
