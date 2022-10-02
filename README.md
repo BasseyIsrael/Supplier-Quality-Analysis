@@ -1,6 +1,6 @@
 
 
-<img src="suppliers banner.png" alt="Supplier Quality Banner" />
+<img src="Image Assets/suppliers banner.png" alt="Supplier Quality Banner" />
 
 
 <div align="center">
