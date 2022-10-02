@@ -226,7 +226,7 @@ As observed in the analysis, more defects do not necessarily translate to more d
 
 # **Explore Dashboard**
 
-<img src="Image Assets\Dashboard Screenshot.png" alt="analysis" />
+<img src="Image Assets\Dashboard Screenshot.PNG" alt="analysis" />
 
 
 
