@@ -97,7 +97,7 @@ The schema for the tables is presented.
 
 
 
-<img src="Image Assets\Data Schema.png" alt="Actuals vs Prediction for LSTM" />
+<img src="Image Assets\Data Schema.PNG" alt="Actuals vs Prediction for LSTM" />
 
 
 Schema for Suppliers Dimensions and Facts Tables
